@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Diet Tracker</title>
+    </head>
+    <body>
+        <div>
+            <h1>Diet Tracking Website</h1>
+        </div>
+        {% for meal in meals %}
+        <div>
+            <h2><a href="">{{ meal.meal }}</a></h2>
+            <p>date: {{ meal.date }}</p>
+            <p>{{ meal.description }}</p>
+        </div>
+    {% endfor %}
+    </body>
+</html>
