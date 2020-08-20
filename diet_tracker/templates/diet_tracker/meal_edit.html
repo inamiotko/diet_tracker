@@ -1,0 +1,17 @@
+
+{% extends 'diet_tracker/base.html' %}
+
+{% block content %}
+    <h2>New meal</h2>
+    
+    <form method="POST" class="post-form">{% csrf_token %}
+        <h5>Meal type: </h5>
+            {{ form.meal }}<br><br>
+        <h5>Calories in this meal: </h5>
+        {{ form.calories }}<br><br>
+        <h5>Meal description: </h5>
+        {{ form.description }}<br><br>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    
+{% endblock %}

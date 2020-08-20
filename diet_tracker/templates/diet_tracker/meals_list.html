@@ -1,17 +1,11 @@
-<html>
-    <head>
-        <title>Diet Tracker</title>
-    </head>
-    <body>
-        <div>
-            <h1>Diet Tracking Website</h1>
-        </div>
+{% extends 'diet_tracker/base.html' %}
+{% block content %}
         {% for meal in meals %}
         <div>
             <h2><a href="">{{ meal.meal }}</a></h2>
-            <p>date: {{ meal.date }}</p>
+            <h5>date and time: {{meal.date}}</h5>
+            <p>calories: {{ meal.calories }}</p>
             <p>{{ meal.description }}</p>
         </div>
     {% endfor %}
-    </body>
-</html>
+{% endblock %}

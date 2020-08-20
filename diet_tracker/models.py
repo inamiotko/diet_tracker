@@ -6,6 +6,7 @@ class Meal(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     meal = models.CharField(max_length=200)
     description = models.TextField()
+    calories = models.CharField(max_length=200)
     date = models.DateTimeField(blank=True, null=True)
     
     def submit(self):
