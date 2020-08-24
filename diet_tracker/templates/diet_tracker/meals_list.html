@@ -1,6 +1,21 @@
 {% extends 'diet_tracker/base.html' %}
 {% block content %}
-        {% for meal in meals %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    {% if user.is_anonymous %}
+    <a class= "nav-link"  href="/accounts/login/">Log in</a>
+    {% else %}
+    <a class= "nav-link" href="/meal/new/">Add new meal</a>
+    <a class= "nav-link" href="/about">About</a>
+    <a class= "nav-link" href="/accounts/logout/">Log out</a>
+    {% endif%}
+</nav>
+  {% if user.is_anonymous %}
+  <h2> You need to log in</h2>
+  {% else %}
+    <h2>You're logged in </h2>
+   {% endif%}
+{% for meal in meals %}
         <div>
             <h2><a href="">{{ meal.meal }}</a></h2>
             <h5>date and time: {{meal.date}}</h5>

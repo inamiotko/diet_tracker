@@ -23,4 +23,6 @@ def new_meal(request):
     else:
         form = UpdateMeal()
         return render(request, 'diet_tracker/meal_edit.html', {'form': form})
-   
+
+def about(request):
+     return render(request,'diet_tracker/about.html', {})
