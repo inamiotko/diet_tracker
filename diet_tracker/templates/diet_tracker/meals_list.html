@@ -8,4 +8,7 @@
             <p>{{ meal.description }}</p>
         </div>
     {% endfor %}
+    <form method="POST" class="post-form">{% csrf_token %}
+        <a class="btn btn-primary" href="/meal/new/">Add new meal</a>
+    </form>
 {% endblock %}
