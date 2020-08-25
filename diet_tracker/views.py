@@ -3,6 +3,7 @@ from django.utils import timezone
 from .models import Meal
 from .forms import UpdateMeal
 from django.shortcuts import redirect
+from django.contrib import auth
 
 # Create your views here.
 def meals_list(request):
@@ -25,4 +26,8 @@ def new_meal(request):
         return render(request, 'diet_tracker/meal_edit.html', {'form': form})
 
 def about(request):
-     return render(request,'diet_tracker/about.html', {})
+     return render(request,'diet_tracker/about.html', {'about':about})
+
+def logout(request):
+    auth.logout(request)
+    return render(request,'registration/logged_out.html')
