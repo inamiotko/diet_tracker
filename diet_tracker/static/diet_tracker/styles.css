@@ -1,9 +1,24 @@
 
 body {
     padding-left: 15px;
+    background-image: url(https://img5.goodfon.com/wallpaper/nbig/8/70/iabloki-sparzha-ogurtsy-kivi-ovoshchi-frukty-zelenye-temnyi.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    text-align: right;
+      
+}
+
+.black_text{
+    color: black;
 }
 .about{
     text-align:center;
+}
+.main_text{
+    text-align:left;
+    color: honeydew;
 }
 .error{
     color: red;
@@ -12,4 +27,7 @@ body {
 .warning{
     color: orange;
     font-size: medium;
+}
+h5, h2, h3, p{
+    color: honeydew;
 }

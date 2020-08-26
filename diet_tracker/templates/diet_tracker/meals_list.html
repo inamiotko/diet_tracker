@@ -11,16 +11,16 @@
     {% endif%}
 </nav>
   {% if user.is_anonymous %}
-  <h2> You need to log in</h2>
+  <h2 class="main_text"> You need to log in</h2>
   {% else %}
-    <h2>You're logged in </h2>
+    <h2 class="main_text">You're logged in </h2>
    {% endif%}
 {% for meal in meals %}
         <div>
-            <h2><a href="">{{ meal.meal }}</a></h2>
-            <h5>date and time: {{meal.date}}</h5>
-            <p>calories: {{ meal.calories }}</p>
-            <p>{{ meal.description }}</p>
+            <h2 class="main_text"><a href="">{{ meal.meal }}</a></h2>
+            <h5 class="main_text">date and time: {{meal.date}}</h5>
+            <p class="main_text">calories: {{ meal.calories }}</p>
+            <p class="main_text">{{ meal.description }}</p>
         </div>
     {% endfor %}
     

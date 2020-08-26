@@ -1,7 +1,7 @@
 {% extends "diet_tracker/base.html" %}
 
 {% block content %}
-
+<div class="main_text">
   {% if form.errors %}
     <p class="error">Your username and password didn't match. Please try again.</p>
   {% endif %}
@@ -15,23 +15,19 @@
     {% endif %}
   {% endif %}
   
-  <form method="post" action="{% url 'login' %}">
+  <form method="post"  action="{% url 'login' %}">
     {% csrf_token %}
-    <table>
-      <tr>
-        <td>{{ form.username.label_tag }}</td>
-        <td>{{ form.username }}</td>
-      </tr>
-      <tr>
-        <td>{{ form.password.label_tag }}</td>
-        <td>{{ form.password }}</td>
-      </tr>
-    </table>
+   
+    <h5>{{ form.username.label_tag }}</h5>
+    <h5>{{ form.username }}</h5>
+     
+    <h5>{{ form.password.label_tag }}</h5>
+    <h5>{{ form.password }}</h5>
+     
+    <br>
     <input type="submit" class="btn btn-primary" value="Log in" />
-    
   </form>
-  
-  {# Assumes you setup the password_reset view in your URLconf #}
+  <a href ="/" class="btn btn-info">Go back to Home page </a> <br><br>
   <p><a href="{% url 'password_reset' %}" class="btn btn-warning">Lost password?</a></p>
-  
+</div>
 {% endblock %}
